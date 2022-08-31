@@ -1,3 +1,4 @@
+var wins=0 ,ties=0, losses=0;
 
 function game(){
 var choice = prompt("Type: R: Rock, P: paper, S: Scissors").toUpperCase();
@@ -6,12 +7,15 @@ var random = choices[Math.floor(Math.random()*3)];
 console.log(random);
 if(random=="S"){
     if(choice=="S"){
-    alert("DRAW!");
+    ties++;
+    alert("DRAW!\n Wins:"+wins+" losses:"+losses+" ties:"+ties);
     }
     else if (choice=="P"){
-        alert("Computer chose Scissors, you LOSE!");
+        losses++;
+        alert("Computer chose Scissors, you LOSE! \n Wins:"+wins+" losses:"+losses+" ties:"+ties);
     } else if (choice =="R"){
-        alert("Computer chose Scissors, you WIN!!!!");
+        wins++;
+        alert("Computer chose Scissors, you WIN!!!!\n Wins:"+wins+" losses:"+losses+" ties:"+ties);
     }
     else{
         if(confirm("Wrong input! Do you want to try again?")){
@@ -22,11 +26,14 @@ if(random=="S"){
     }
 } else if(random=="P"){
     if (choice=="P"){
-        alert("DRAW!");
+        ties++;
+        alert("DRAW!\n Wins:"+wins+" losses:"+losses+" ties:"+ties);
     } else if(choice=="S"){
-        alert("computer chose Paper, you WIN!!!");
+        wins++;
+        alert("computer chose Paper, you WIN!!!\n Wins:"+wins+" losses:"+losses+" ties:"+ties);
     } else if(choice=="R"){
-        alert("computer chose Paper, youn LOSE!");
+        losses++;
+        alert("computer chose Paper, youn LOSE!\n Wins:"+wins+" losses:"+losses+" ties:"+ties);
     } else{
         if(confirm("Wrong input! Do you want to try again?")){
             game();
@@ -36,12 +43,15 @@ if(random=="S"){
     }
 } else if (random =="R"){
     if(choice=="R"){
-        alert("DRAW!");
+        ties++;
+        alert("DRAW!\n Wins:"+wins+" losses:"+losses+" ties:"+ties);
     } 
     else if(choice=="S"){
-        alert("computer chose Rock, you LOSE!");
+        losses++;
+        alert("computer chose Rock, you LOSE!\n Wins:"+wins+" losses:"+losses+" ties:"+ties);
     } else if (choice=="P"){
-        alert("computer chose rock, you WIN!")
+        wins++;
+        alert("computer chose rock, you WIN!\n Wins:"+wins+" losses:"+losses+" ties:"+ties)
     } else{
         if(confirm("Wrong input! Do you want to try again?")){
             game();
